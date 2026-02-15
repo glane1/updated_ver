@@ -26,13 +26,72 @@ body {
   width: 90%;
   max-width: 450px;
   text-align: center;
+  position: relative;
 }
 
-h1 {
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
-  text-transform: uppercase;
-  letter-spacing: 4px;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   margin-bottom: 20px;
+}
+
+.help-toggle {
+  position: absolute;
+  right: 0;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #2e1065;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.rules-list li { margin: 10px 0; font-size: 1.1rem; }
+
+.close-btn {
+  background: white;
+  color: #581c87;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .choices {
@@ -83,7 +142,6 @@ h1 {
   color: #fbbf24;
   font-weight: bold;
   height: 1.5em;
-  margin-bottom: 10px;
 }
 
 .score-board {
@@ -117,7 +175,7 @@ h1 {
 .redText { color: #f87171; }
 
 .reset-btn {
-  display: none; /* Controlled by JS */
+  display: none;
   margin: 25px auto 0;
   padding: 15px 40px;
   border-radius: 50px;
@@ -128,7 +186,6 @@ h1 {
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
   width: 80%;
   max-width: 200px;
 }
@@ -141,9 +198,7 @@ h1 {
 }
 .shaking { animation: shake 0.2s infinite; }
 
-/* Mobile height adjustment */
 @media (max-height: 700px) {
   .container { padding: 20px; }
-  .result { font-size: 2rem; }
   .choice-btn { width: 75px; height: 75px; font-size: 2.2rem; }
 }
