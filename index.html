@@ -8,12 +8,15 @@
 </head>
 <body>
   <main class="container">
-    <h1>Arena</h1>
+    <div class="header">
+      <h1>Arena</h1>
+      <button id="helpBtn" class="help-toggle" onclick="openHelp()" aria-label="How to play">❓</button>
+    </div>
 
     <div class="choices" role="group" aria-label="Choose rock, paper, or scissors">
-      <button class="choice-btn" onclick="playGame('rock')" aria-label="Rock">👊</button>
-      <button class="choice-btn" onclick="playGame('paper')" aria-label="Paper">🖐</button>
-      <button class="choice-btn" onclick="playGame('scissors')" aria-label="Scissors">✌️</button>
+      <button class="choice-btn" onclick="playGame('rock')">👊</button>
+      <button class="choice-btn" onclick="playGame('paper')">🖐</button>
+      <button class="choice-btn" onclick="playGame('scissors')">✌️</button>
     </div>
 
     <div id="playerDisplay" class="display-box">PLAYER: —</div>
@@ -36,6 +39,19 @@
     <div id="streakDisplay" class="streak-badge"></div>
 
     <button id="resetBtn" class="reset-btn" onclick="resetGame()">REMATCH</button>
+
+    <div id="helpModal" class="modal">
+      <div class="modal-content">
+        <h2>How to Play</h2>
+        <ul class="rules-list">
+          <li>👊 <strong>Rock</strong> beats Scissors</li>
+          <li>🖐 <strong>Paper</strong> beats Rock</li>
+          <li>✌️ <strong>Scissors</strong> beats Paper</li>
+        </ul>
+        <p>First to <strong>5 points</strong> wins the match!</p>
+        <button class="close-btn" onclick="closeHelp()">GOT IT!</button>
+      </div>
+    </div>
   </main>
 
   <script src="index.js"></script>
