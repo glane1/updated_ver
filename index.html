@@ -13,6 +13,12 @@
       <button id="helpBtn" class="help-toggle" onclick="openHelp()" aria-label="How to play">❓</button>
     </div>
 
+    <div class="mode-selector" role="tablist" aria-label="Difficulty modes">
+      <button class="mode-btn active" data-mode="normal" role="tab" aria-selected="true">Normal</button>
+      <button class="mode-btn" data-mode="intermediate" role="tab" aria-selected="false">Intermediate</button>
+      <button class="mode-btn" data-mode="hard" role="tab" aria-selected="false">Hard</button>
+      <div class="mode-note">AI win: <span id="modeProbLabel">~40%</span></div>
+    </div>
     <div class="choices" role="group" aria-label="Choose rock, paper, or scissors">
       <button class="choice-btn" onclick="playGame('rock')">👊</button>
       <button class="choice-btn" onclick="playGame('paper')">🖐</button>
